@@ -1,3 +1,5 @@
+**Visit the project live at: http://sahirmemon.github.io/KA-badge-explorer**
+
 # Khan Academy Project-Based Interview: Badge Explorer
 
 ## Overview
