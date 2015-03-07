@@ -1,0 +1,22 @@
+{
+  "name": "badgeexplorer",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Sahir Memon",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.7.0",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-nodemon": "^1.0.5",
+    "connect": "^3.3.4",
+    "serve-static": "^1.9.1",
+    "react": "^0.12.0",
+    "reactify": "^0.13.1",
+    "es6-promise": "^2.0.1",
+    "object-assign": "^2.0.0",
+    "events": "^1.0.2",
+    "keymirror": "^0.1.1",
+    "flux": "^2.0.1"
+  }
+}

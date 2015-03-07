@@ -1,0 +1,99 @@
+/* GENERIC LAYOUT AND UTILITY CLASSES */
+
+body {
+    color: #444;
+    font: 14px/1.3 "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Elements with .clearfix grow to contain their floated descendants --
+ * from http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 940px;
+}
+
+/* PAGE COMPONENTS */
+
+.detail-view {
+    background: #f7f7f7;
+    border-bottom: 1px solid #ccc;
+    padding: 40px 0;
+}
+
+.browse-view {
+    padding: 40px 0;
+}
+
+/* BADGE PAGE COMPONENTS */
+
+.badge-switcher {
+    margin: 0 auto;
+    position: relative;
+    padding: 0 50px;
+    width: 600px;
+}
+
+.badge-switch {
+    color: #aaa;
+    font-size: 36px;
+    position: absolute;
+    text-decoration: none;
+    top: 90px;
+}
+
+.badge-switch-left {
+    left: 0;
+}
+
+.badge-switch-right {
+    right: 0;
+}
+
+.full-badge {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #666;
+    padding: 30px 40px;
+}
+
+.full-badge-icon {
+    float: left;
+    text-align: center;
+    width: 160px;
+}
+
+.full-badge-icon img {
+    display: block;
+    height: 160px;
+    width: 160px;
+}
+
+.full-badge-title,
+.full-badge-description {
+    margin-left: 200px;
+}
+
+.full-badge-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.full-badge-description {
+    font-size: 18px;
+    font-weight: bold;
+}
