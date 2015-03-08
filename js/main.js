@@ -1,34 +1,18 @@
+"use strict";
+
 var React = require('react');
 var Router = require('react-router');
+var routes = require('./router');
 var APIUtils = require('./utils/APIUtils');
-var BadgeExplorerApp = require('./components/BadgeExplorerApp.react');
-var Index = require('./components/Index.react');
-var Badge = require('./components/Badge.react');
-var NotFound = require('./components/NotFound.react');
-window.React = React;
 
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
-var NotFoundRoute = Router.NotFoundRoute;
-var RouteHandler = Router.RouteHandler;
-var Link = Router.Link;
-
-APIUtils.getAllBadgeTypes(); //initially retrieve all badge types
-
-var routes = (
-    <Route handler={BadgeExplorerApp}>
-        <DefaultRoute handler={Index}/>
-        <Route name="badge" path="badge/:id" handler={Badge}/>
-        <NotFoundRoute handler={NotFound}/>
-    </Route>
-);
+//initially retrieve all badge types
+APIUtils.getAllBadgeTypes(); 
 
 Router.run(routes, function (Handler) { 
     React.render(<Handler/>,
         document.getElementById('main')
     );
 });
-
 
 // (function() {
 

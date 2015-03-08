@@ -4,7 +4,7 @@ var BadgeTypeStore = require('../stores/BadgeTypeStore.js');
 
 var Route = Router.Route;
 var Link = Router.Link;
-var RouteHandler = Route.RouteHandler;
+var RouteHandler = Router.RouteHandler;
 
 function getBadgeTypesState() {
   return {
@@ -13,6 +13,8 @@ function getBadgeTypesState() {
 }
 
 var BadgeExplorerApp = React.createClass ({
+  
+  mixins: [Router.State],
   
   getInitialState: function() {
     return getBadgeTypesState();
@@ -27,14 +29,12 @@ var BadgeExplorerApp = React.createClass ({
   },
                                           
   render: function() {
-    console.log("Checking to see if there is anything in state badgeTypes: " + this.state.badgeTypes);
     var links = this.state.badgeTypes.map(function(badgeType) {
-      console.log(badgeType.type_label);
       return (
         <li key={badgeType.category}>
           <Link
-            to="badge"
-            params={{id: badgeType.category}}
+            to="category"
+            params={{category: badgeType.category}}
           >{badgeType.type_label}</Link>
         </li>
       );
@@ -45,14 +45,13 @@ var BadgeExplorerApp = React.createClass ({
           {links}
         </ul>
         <div className="badge">
-          <RouteHandler />
+          <RouteHandler/>
         </div>
       </div>
     );
   },
     
   _onChange: function() {
-    console.log("on change");
     this.setState(getBadgeTypesState());
   }
 
