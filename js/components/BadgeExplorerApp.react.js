@@ -32,13 +32,13 @@ var BadgeExplorerApp = React.createClass ({
     var links = this.state.badgeTypes.map(function(badgeType) {
       console.log(badgeType);
       return (
-        <li key={badgeType.category}>
+        <li key={badgeType.category} className="panel">
           <Link
             to="category"
             params={{category: badgeType.category}}>
               <img className="badge" src={badgeType.medium_icon_src}/>
-              <span>{badgeType.type_label}</span>
-              <p>{badgeType.translated_description}</p>
+              <p className="badge-type-header">{badgeType.type_label}</p>
+              <p className="badge-type-text">{badgeType.translated_description}</p>
             </Link>
         </li>
       );
@@ -51,7 +51,7 @@ var BadgeExplorerApp = React.createClass ({
                 <a href="http://khanacademy.org">
                   <img className="logo" src="img/ka-simplified-logo-white.png"/>
                 </a>
-                <h1>Badge Explorer</h1>
+                <h1>Badges</h1>
               </div>
             </div>
         </div>

@@ -58,13 +58,13 @@ var BadgeExplorerApp = React.createClass ({displayName: "BadgeExplorerApp",
     var links = this.state.badgeTypes.map(function(badgeType) {
       console.log(badgeType);
       return (
-        React.createElement("li", {key: badgeType.category}, 
+        React.createElement("li", {key: badgeType.category, className: "panel"}, 
           React.createElement(Link, {
             to: "category", 
             params: {category: badgeType.category}}, 
               React.createElement("img", {className: "badge", src: badgeType.medium_icon_src}), 
-              React.createElement("span", null, badgeType.type_label), 
-              React.createElement("p", null, badgeType.translated_description)
+              React.createElement("p", {className: "badge-type-header"}, badgeType.type_label), 
+              React.createElement("p", {className: "badge-type-text"}, badgeType.translated_description)
             )
         )
       );
@@ -77,7 +77,7 @@ var BadgeExplorerApp = React.createClass ({displayName: "BadgeExplorerApp",
                 React.createElement("a", {href: "http://khanacademy.org"}, 
                   React.createElement("img", {className: "logo", src: "img/ka-simplified-logo-white.png"})
                 ), 
-                React.createElement("h1", null, "Badge Explorer")
+                React.createElement("h1", null, "Badges")
               )
             )
         ), 
