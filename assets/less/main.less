@@ -1,0 +1,310 @@
+/*******************************************/
+/* COLORS */
+@darkestBackground: #2c3747;
+
+
+@lighterBackground: #EEEEEE; //#F7F7F7; 
+@lightestBackground: #ffffff;
+
+@colorBannerText: #FFFFFF;
+@colorHeaderText: #4D4D4D;
+@colorSubHeadingText: #666666;
+@colorBodyText: #333333;
+
+/*******************************************/
+/* GENERIC LAYOUT AND UTILITY CLASSES */
+
+body {
+    color: @colorBodyText;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    font-size: 100%;
+    margin: 0;
+}
+
+h1 { 
+  font-size: 4em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+a {
+  font-size: 1em;
+}
+
+/* Elements with .clearfix grow to contain their floated descendants --
+ * from http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.flex-default {
+  display: flex;
+  flex: 0 0 33%;
+  list-style: none;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.first { 
+  order: -1;
+}
+
+.full {
+  flex: 0 0 100%;
+}
+
+.half {
+  flex: 0 0 100%;
+}
+
+.third { 
+  flex: 0 0 100%;
+}
+
+.three-quarters {
+  flex: 0 0 100%;
+}
+
+/*******************************************/
+/* HEADER */
+
+.banner {
+  position: relative;
+  background-color: @darkestBackground;
+  background-image: url("../img/homepage-banner-leaves-partwhite.png");
+  background-repeat: no-repeat;
+  min-height: 250px;  
+  .logo {
+    padding-top: 35px;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  h1 {
+    color: @colorBannerText;
+    font-family: MuseoSans-500, sans-serif;
+    padding-top: 35px;
+  }
+}
+
+
+/*******************************************/
+/* BODY */
+
+a:hover {
+  text-decoration: none;
+}
+
+/* First column: Badge Types */
+.badge-types {
+  background-color: @lighterBackground;
+  h2 {
+    padding: 15px 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: @colorHeaderText;
+  }
+  ul {
+    list-style: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    li {
+      background-color: @lightestBackground;
+      transition: background-color 0.25s ease-in-out;
+      clear: both;
+      color: @colorBodyText;
+      a {
+        display: block;
+        padding: 25px 10px;    
+        color: @colorSubHeadingText;
+      }
+      img {
+        float: left;
+      }
+      p {
+        padding-left: 100px;
+      }
+    }
+    li:hover {
+      background-color: rgba(0,0,0,0.05);
+      transition: background-color 0.35s ease-in-out;
+    }
+  }
+  .panel {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.badge-type-header {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.badge-type-text {
+}
+
+
+/*******************************************/
+/* RESPONSIVE STYLES */
+@media (max-width: 367px) {
+  
+  /* GENERIC */
+  .full-small-mobile {
+    flex: 0 0 100%;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  
+  /* GENERIC */
+  p {
+    font-size: 1em;
+  }
+  a {
+    font-size: 1.5em;  
+  }
+  
+  /* HEADER */
+  h1 {
+    font-size: 4em;
+  }
+  
+  .banner {
+    background-position: 5%;
+    .logo {
+    }
+    .container { 
+      margin-left: 0;
+      margin-right: 0;
+      text-align: right;
+    }
+  }
+  
+  /* BODY */
+  /* First column: Badge Types */
+  .badge-types {
+    h2 {
+      font-weight: 600;
+      text-align: center;
+    }
+    img {
+
+    }
+    span {
+
+    }
+    p {
+
+    }
+    li {
+    }
+  }
+}
+
+@media (min-width: 992px) { 
+  
+  /* GENERIC */
+  .full {
+    flex: 0 0 100%;
+  }
+
+  .half {
+    flex: 0 0 50%;
+  }
+
+  .third { 
+    flex: 0 0 33%;
+  }
+
+  .three-quarters {
+    flex: 0 0 75%;
+  }
+
+  /* HEADER */
+  h1 {
+    font-size: 5em;
+  }
+  
+  .banner {
+    background-position: 12%;
+  }
+  
+  /* BODY */
+  /* First column: Badge Types */
+  .badge-types {
+    h2 {
+      font-size: 3em;
+    }
+    img {
+
+    }
+    span {
+
+    }
+    p {
+
+    }
+    li {
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  
+  /* GENERIC */
+
+  
+  /* HEADER */
+  h1 {
+    font-size: 6em;
+  }
+  
+  .banner {
+    background-position: 18%;
+  }
+  
+  /* BODY */
+  /* First column: Badge Types */
+  .badge-types {
+    img {
+
+    }
+    span {
+
+    }
+    p {
+
+    }
+    li {
+    }
+  }
+}
