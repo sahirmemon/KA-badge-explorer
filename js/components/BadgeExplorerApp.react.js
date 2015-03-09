@@ -30,22 +30,41 @@ var BadgeExplorerApp = React.createClass ({
                                           
   render: function() {
     var links = this.state.badgeTypes.map(function(badgeType) {
+      console.log(badgeType);
       return (
         <li key={badgeType.category}>
           <Link
             to="category"
-            params={{category: badgeType.category}}
-          >{badgeType.type_label}</Link>
+            params={{category: badgeType.category}}>
+              <img className="badge" src={badgeType.medium_icon_src}/>
+              <span>{badgeType.type_label}</span>
+              <p>{badgeType.translated_description}</p>
+            </Link>
         </li>
       );
     });
     return (
-      <div className="badge-types-container">
-        <ul className="badge-types">
-          {links}
-        </ul>
-        <div className="badge">
-          <RouteHandler/>
+      <div className="flex-container">
+        <div className="flex-default full first banner">
+            <div className="three-quarters full-small-mobile end">
+              <div className="container">
+                <a href="http://khanacademy.org">
+                  <img className="logo" src="img/ka-simplified-logo-white.png"/>
+                </a>
+                <h1>Badge Explorer</h1>
+              </div>
+            </div>
+        </div>
+        <div className="third badge-types">
+          <h2>Badge Types</h2>
+          <ul>
+            {links}
+          </ul>
+        </div>
+        <div className="third">
+          <div className="badge">
+            <RouteHandler/>
+          </div>
         </div>
       </div>
     );

@@ -56,22 +56,41 @@ var BadgeExplorerApp = React.createClass ({displayName: "BadgeExplorerApp",
                                           
   render: function() {
     var links = this.state.badgeTypes.map(function(badgeType) {
+      console.log(badgeType);
       return (
         React.createElement("li", {key: badgeType.category}, 
           React.createElement(Link, {
             to: "category", 
-            params: {category: badgeType.category}
-          }, badgeType.type_label)
+            params: {category: badgeType.category}}, 
+              React.createElement("img", {className: "badge", src: badgeType.medium_icon_src}), 
+              React.createElement("span", null, badgeType.type_label), 
+              React.createElement("p", null, badgeType.translated_description)
+            )
         )
       );
     });
     return (
-      React.createElement("div", {className: "badge-types-container"}, 
-        React.createElement("ul", {className: "badge-types"}, 
-          links
+      React.createElement("div", {className: "flex-container"}, 
+        React.createElement("div", {className: "flex-default full first banner"}, 
+            React.createElement("div", {className: "three-quarters full-small-mobile end"}, 
+              React.createElement("div", {className: "container"}, 
+                React.createElement("a", {href: "http://khanacademy.org"}, 
+                  React.createElement("img", {className: "logo", src: "img/ka-simplified-logo-white.png"})
+                ), 
+                React.createElement("h1", null, "Badge Explorer")
+              )
+            )
         ), 
-        React.createElement("div", {className: "badge"}, 
-          React.createElement(RouteHandler, null)
+        React.createElement("div", {className: "third badge-types"}, 
+          React.createElement("h2", null, "Badge Types"), 
+          React.createElement("ul", null, 
+            links
+          )
+        ), 
+        React.createElement("div", {className: "third"}, 
+          React.createElement("div", {className: "badge"}, 
+            React.createElement(RouteHandler, null)
+          )
         )
       )
     );
