@@ -1,4 +1,4 @@
 var connect = require('connect');
 var serveStatic = require('serve-static');
 
-connect().use(serveStatic("dist")).listen(80);
+connect().use(serveStatic("dist")).listen(8080);

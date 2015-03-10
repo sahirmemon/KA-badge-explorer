@@ -4,8 +4,7 @@ module.exports = {
   
   ActionTypes: keyMirror({
     RECEIVE_BADGE_TYPES: null,
-    BADGETYPE_GET: null,
-    BADGE_GET: null
+    RECEIVE_BADGES: null
   }),
   
   PayloadSources: keyMirror({

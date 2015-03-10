@@ -1,11 +1,13 @@
 var BadgeExplorerActions = require('../actions/BadgeExplorerActions');
 
-var API = 'https://www.khanacademy.org/api/v1/badges/categories';
+var API_CATEGORIES = 'https://www.khanacademy.org/api/v1/badges/categories';
+var API_BADGES = 'https://www.khanacademy.org/api/v1/badges';
 
 module.exports = {    
+  
   getAllBadgeTypes: function() {
     var badgeTypes = {};
-    getJSON(API, function(err, res) {
+    getJSON(API_CATEGORIES, function(err, res) {
       if (err != undefined) {
         console.log("Uh-oh! There was a problem with retrieving categories. Let's give it one more try.");
         return;
@@ -14,6 +16,20 @@ module.exports = {
         badgeTypes[badgeType.category] = badgeType;
       });
       BadgeExplorerActions.receiveBadgeTypes(badgeTypes);
+    });
+  },
+  
+  getBadges: function() {
+    var badges = [];
+    getJSON(API_BADGES, function(err, res) {
+      if (err != undefined) {
+        console.log("Uh-oh! There was a problem with retrieving badges. Let's give it one more try.");
+        return;
+      }
+      res.forEach(function(badge) {
+        badges.push(badge);
+      });
+      BadgeExplorerActions.receiveBadges(badges);
     });
   }
 };

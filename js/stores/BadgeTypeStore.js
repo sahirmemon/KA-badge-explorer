@@ -44,14 +44,15 @@ BadgeTypeStore.dispatchToken = AppDispatcher.register(function(payload) {
   
   var action = payload.action;
   
-  switch(action.type) {
-    case ActionTypes.RECEIVE_BADGE_TYPES:
-      addBadgeTypes(action.badgeTypes)
-      console.log("loaded");
-      BadgeTypeStore.emitChange();
-      break;
-      
-    default:
+  if (action != undefined) {
+    switch(action.type) {
+      case ActionTypes.RECEIVE_BADGE_TYPES:
+        addBadgeTypes(action.badgeTypes)
+        BadgeTypeStore.emitChange();
+        break;
+
+      default:
+    }
   }
 });
 

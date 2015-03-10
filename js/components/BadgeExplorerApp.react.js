@@ -27,18 +27,17 @@ var BadgeExplorerApp = React.createClass ({
   componentWillUnmount: function() {
     BadgeTypeStore.removeChangeListener(this._onChange);
   },
-                                          
+                                       
   render: function() {
     var links = this.state.badgeTypes.map(function(badgeType) {
-      console.log(badgeType);
       return (
         <li key={badgeType.category} className="panel">
           <Link
             to="category"
-            params={{category: badgeType.category}}>
+            params={{category: badgeType.category, name: badgeType.type_label}}>
               <img className="badge" src={badgeType.medium_icon_src}/>
-              <p className="badge-type-header">{badgeType.type_label}</p>
-              <p className="badge-type-text">{badgeType.translated_description}</p>
+              <p className="badge-header">{badgeType.type_label}</p>
+              <p>{badgeType.translated_description}</p>
             </Link>
         </li>
       );
@@ -61,8 +60,8 @@ var BadgeExplorerApp = React.createClass ({
             {links}
           </ul>
         </div>
-        <div className="third">
-          <div className="badge">
+        <div className="two-thirds">
+          <div className="badge-type">
             <RouteHandler/>
           </div>
         </div>
@@ -71,6 +70,8 @@ var BadgeExplorerApp = React.createClass ({
   },
     
   _onChange: function() {
+    if (!this.isMounted()) 
+      return;
     this.setState(getBadgeTypesState());
   }
 

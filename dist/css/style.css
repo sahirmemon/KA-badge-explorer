@@ -77,6 +77,11 @@ a {
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
 }
+.two-thirds {
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+}
 .three-quarters {
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -109,11 +114,15 @@ a {
 a:hover {
   text-decoration: none;
 }
-/* First column: Badge Types */
 .badge-types {
   background-color: #eeeeee;
 }
-.badge-types h2 {
+.badge-header {
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-bottom: 0;
+}
+h2 {
   padding: 15px 0;
   font-size: 2.5em;
   font-weight: 600;
@@ -121,43 +130,50 @@ a:hover {
   text-align: center;
   color: #4d4d4d;
 }
-.badge-types ul {
+ul {
   list-style: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
 }
-.badge-types ul li {
+ul li {
   background-color: #ffffff;
   transition: background-color 0.25s ease-in-out;
   clear: both;
   color: #333333;
 }
-.badge-types ul li a {
+ul li a {
   display: block;
   padding: 25px 10px;
   color: #666666;
 }
-.badge-types ul li img {
+ul li img {
   float: left;
 }
-.badge-types ul li p {
+ul li p {
   padding-left: 100px;
 }
-.badge-types ul li:hover {
+ul li:hover {
   background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.35s ease-in-out;
 }
-.badge-types .panel {
+.panel {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
-.badge-type-header {
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0;
+.badges ul li {
+  margin-bottom: 0px;
+  border-bottom: 1px solid #eeeeee;
+}
+.badges ul li a p {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 85px;
+}
+.badge-details {
+  border-left: 1px solid #eeeeee;
 }
 /*******************************************/
 /* RESPONSIVE STYLES */
@@ -167,6 +183,12 @@ a:hover {
     -webkit-flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
+  }
+}
+@media (max-width: 991px) {
+  /* BODY */
+  .badges h2 {
+    border-bottom: 1px solid #eeeeee;
   }
 }
 @media (min-width: 768px) {
@@ -190,10 +212,12 @@ a:hover {
     text-align: right;
   }
   /* BODY */
-  /* First column: Badge Types */
-  .badge-types h2 {
+  h2 {
     font-weight: 600;
     text-align: center;
+  }
+  .badge-header {
+    font-size: 1.2em;
   }
 }
 @media (min-width: 992px) {
@@ -209,9 +233,14 @@ a:hover {
     flex: 0 0 50%;
   }
   .third {
-    -webkit-flex: 0 0 33%;
-    -ms-flex: 0 0 33%;
-    flex: 0 0 33%;
+    -webkit-flex: 0 0 33.33333333%;
+    -ms-flex: 0 0 33.33333333%;
+    flex: 0 0 33.33333333%;
+  }
+  .two-thirds {
+    -webkit-flex: 0 0 66.66666667%;
+    -ms-flex: 0 0 66.66666667%;
+    flex: 0 0 66.66666667%;
   }
   .three-quarters {
     -webkit-flex: 0 0 75%;
@@ -226,8 +255,7 @@ a:hover {
     background-position: 12%;
   }
   /* BODY */
-  /* First column: Badge Types */
-  .badge-types h2 {
+  h2 {
     font-size: 3em;
   }
 }
@@ -241,5 +269,4 @@ a:hover {
     background-position: 18%;
   }
   /* BODY */
-  /* First column: Badge Types */
 }

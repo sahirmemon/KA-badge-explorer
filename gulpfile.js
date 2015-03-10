@@ -46,7 +46,7 @@ gulp.task('lint', function() {
 
 gulp.task('js', function() {
   gulp.src(package.paths.app) 
-    .pipe(browserify({transform: 'reactify'}))
+    .pipe(browserify({transform: 'reactify', debug: 'true'}))
     .pipe(concat(package.dest.app))
     .pipe(gulp.dest(package.dest.dist.js));
 });

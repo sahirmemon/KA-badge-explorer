@@ -12,10 +12,10 @@ var BadgeExplorerActions = {
     });
   },
   
-  getBadgeType: function(category) {
+  receiveBadges: function(badges) {
     AppDispatcher.dispatch({
-      actionType: ActionTypes.BADGETYPE_GET,
-      category: category
+      actionType: ActionTypes.RECEIVE_BADGES,
+      badges: badges
     });
   }
 };

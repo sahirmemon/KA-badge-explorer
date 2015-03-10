@@ -5,8 +5,9 @@ var Router = require('react-router');
 var routes = require('./router');
 var APIUtils = require('./utils/APIUtils');
 
-//initially retrieve all badge types
+//initially retrieve all badges
 APIUtils.getAllBadgeTypes(); 
+APIUtils.getBadges();
 
 Router.run(routes, function (Handler) { 
     React.render(<Handler/>,

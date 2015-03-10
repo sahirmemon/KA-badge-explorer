@@ -80,6 +80,10 @@ a {
   flex: 0 0 100%;
 }
 
+.two-thirds {
+  flex: 0 0 100%;
+}
+
 .three-quarters {
   flex: 0 0 100%;
 }
@@ -116,59 +120,73 @@ a:hover {
   text-decoration: none;
 }
 
-/* First column: Badge Types */
 .badge-types {
   background-color: @lighterBackground;
-  h2 {
-    padding: 15px 0;
-    font-size: 2.5em;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    color: @colorHeaderText;
-  }
-  ul {
-    list-style: none;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-    li {
-      background-color: @lightestBackground;
-      transition: background-color 0.25s ease-in-out;
-      clear: both;
-      color: @colorBodyText;
-      a {
-        display: block;
-        padding: 25px 10px;    
-        color: @colorSubHeadingText;
-      }
-      img {
-        float: left;
-      }
-      p {
-        padding-left: 100px;
-      }
-    }
-    li:hover {
-      background-color: rgba(0,0,0,0.05);
-      transition: background-color 0.35s ease-in-out;
-    }
-  }
-  .panel {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
-.badge-type-header {
+.badge-header {
   font-weight: 600;
-  text-transform: uppercase;
+  font-size: 1.7em;
+//  text-transform: uppercase;
   margin-bottom: 0;
 }
 
-.badge-type-text {
+h2 {
+  padding: 15px 0;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  color: @colorHeaderText;
+}
+ul {
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  li {
+    background-color: @lightestBackground;
+    transition: background-color 0.25s ease-in-out;
+    clear: both;
+    color: @colorBodyText;
+    a {
+      display: block;
+      padding: 25px 10px;    
+      color: @colorSubHeadingText;
+    }
+    img {
+      float: left;
+    }
+    p {
+      padding-left: 100px;
+    }
+  }
+  li:hover {
+    background-color: rgba(0,0,0,0.05);
+    transition: background-color 0.35s ease-in-out;
+  }
+}
+.panel {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badges { 
+  ul li {
+    margin-bottom: 0px;
+    border-bottom: 1px solid @lighterBackground;
+    a p {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 85px;
+    }
+  }
+}
+
+.badge-details {
+  border-left: 1px solid @lighterBackground;
 }
 
 
@@ -179,6 +197,17 @@ a:hover {
   /* GENERIC */
   .full-small-mobile {
     flex: 0 0 100%;
+  }
+  
+}
+
+@media (max-width: 991px) {
+ 
+  /* BODY */
+  .badges {
+    h2 {
+      border-bottom: 1px solid @lighterBackground;
+    }
   }
   
 }
@@ -210,23 +239,13 @@ a:hover {
   }
   
   /* BODY */
-  /* First column: Badge Types */
-  .badge-types {
-    h2 {
-      font-weight: 600;
-      text-align: center;
-    }
-    img {
-
-    }
-    span {
-
-    }
-    p {
-
-    }
-    li {
-    }
+  h2 {
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .badge-header {
+    font-size: 1.2em;
   }
 }
 
@@ -242,9 +261,13 @@ a:hover {
   }
 
   .third { 
-    flex: 0 0 33%;
+    flex: 0 0 100/3%;
   }
 
+  .two-thirds {
+    flex: 0 0 200/3%;
+  }
+  
   .three-quarters {
     flex: 0 0 75%;
   }
@@ -259,22 +282,8 @@ a:hover {
   }
   
   /* BODY */
-  /* First column: Badge Types */
-  .badge-types {
-    h2 {
-      font-size: 3em;
-    }
-    img {
-
-    }
-    span {
-
-    }
-    p {
-
-    }
-    li {
-    }
+  h2 {
+    font-size: 3em;
   }
 }
 
@@ -293,18 +302,5 @@ a:hover {
   }
   
   /* BODY */
-  /* First column: Badge Types */
-  .badge-types {
-    img {
-
-    }
-    span {
-
-    }
-    p {
-
-    }
-    li {
-    }
-  }
+  
 }
