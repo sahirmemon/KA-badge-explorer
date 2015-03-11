@@ -22,7 +22,7 @@
 	"jstransform": "^10.1.0",
     "react": "0.12.2",
     "react-router": "0.12.4",
-    "reactify": "^0.13.1",
+    "reactify": "^1.0.0",
     "vinyl-buffer": "^1.0.0"
   },
   "paths": {
