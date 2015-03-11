@@ -4,6 +4,8 @@ var BadgesStore = require('../stores/BadgesStore.js');
 
 var Badge = React.createClass ({
   
+  mixins: [Router.Navigation, Router.State],
+  
   getBadgeState: function() {
     var slug = this.getParams().slug;
     return {
@@ -11,9 +13,7 @@ var Badge = React.createClass ({
     };
   },
   
-  mixins: [ Router.State],
-  
-  getInitialState: function() {    
+  getInitialState: function() {  
     if (!this.isMounted())
       return null;
     return this.getBadgeState();
@@ -33,15 +33,21 @@ var Badge = React.createClass ({
     this.setState(this.getBadgeState());
   },
   
+  componentDidMount: function() {
+    this.setState(this.getBadgeState());
+  },
+  
   render: function() {
-    if (this.state == undefined) {
-      return (<div></div>);
+    if (this.state == undefined || this.state.badge ==  undefined) {
+      return null;
     }
     return (
-      <div className="third badges">
-        <img src={this.state.badge.icons.large}/>
-        <p>{this.state.badge.translated_description}</p>
-        <p>{this.state.badge.safe_extended_description}</p>  
+      <div className="third">
+        <div className="badge panel">
+          <img src={this.state.badge.icons.large} width="320" height="320" className="img-responsive"/>
+          <p className="badge-name">{this.state.badge.translated_description}</p>
+          <p className="badge-description">{this.state.badge.safe_extended_description}</p>  
+        </div>
       </div>
     );
   },
@@ -49,7 +55,6 @@ var Badge = React.createClass ({
   _onChange: function() {
     if (!this.isMounted()) 
       return;
-    
     this.setState(this.getBadgeState());
   }
 

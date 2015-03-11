@@ -27,7 +27,7 @@ var BadgeExplorerApp = React.createClass ({
   componentWillUnmount: function() {
     BadgeTypeStore.removeChangeListener(this._onChange);
   },
-                                       
+  
   render: function() {
     var links = this.state.badgeTypes.map(function(badgeType) {
       return (
@@ -60,7 +60,7 @@ var BadgeExplorerApp = React.createClass ({
             {links}
           </ul>
         </div>
-        <div className="two-thirds">
+        <div className="two-thirds badges-container">
           <div className="badge-type">
             <RouteHandler/>
           </div>

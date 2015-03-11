@@ -15,7 +15,7 @@ var Badges = React.createClass ({
     };
   },
   
-  mixins: [Router.State],
+  mixins: [Router.Navigation, Router.State],
   
   getInitialState: function() {
     return this.getBadgesState();
@@ -69,7 +69,6 @@ var Badges = React.createClass ({
   _onChange: function() {
     if (!this.isMounted()) 
       return;
-    
     this.setState(this.getBadgesState());
   }
 

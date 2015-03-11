@@ -18,6 +18,10 @@ p {
 a {
   font-size: 1em;
 }
+a:hover,
+a:focus {
+  text-decoration: none;
+}
 /* Elements with .clearfix grow to contain their floated descendants --
  * from http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before,
@@ -114,6 +118,18 @@ a {
 a:hover {
   text-decoration: none;
 }
+.blank p {
+  display: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 30%;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #b6b6b6;
+}
 .badge-types {
   background-color: #eeeeee;
 }
@@ -148,6 +164,10 @@ ul li a {
   padding: 25px 10px;
   color: #666666;
 }
+ul li a:hover,
+ul li a:focus {
+  color: #666666;
+}
 ul li img {
   float: left;
 }
@@ -174,6 +194,37 @@ ul li:hover {
 }
 .badge-details {
   border-left: 1px solid #eeeeee;
+  background-color: #9cb53a;
+}
+.badge-details .badge {
+  background-color: #eeeeee;
+  width: 80%;
+  height: 60%;
+  margin: 50px auto;
+}
+.badge-details .badge img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.badge-details .badge p {
+  text-align: center;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.badge-details .badge .badge-name {
+  font-size: 4em;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.badge-details .badge .badge-description {
+  font-size: 2em;
+  color: #8c8c8c;
+  padding-bottom: 30px;
+  word-wrap: normal;
 }
 /*******************************************/
 /* RESPONSIVE STYLES */
@@ -185,10 +236,9 @@ ul li:hover {
     flex: 0 0 100%;
   }
 }
-@media (max-width: 991px) {
-  /* BODY */
-  .badges h2 {
-    border-bottom: 1px solid #eeeeee;
+@media (max-width: 549px) {
+  .badge-details .badge img {
+    max-width: 200px;
   }
 }
 @media (min-width: 768px) {
@@ -216,8 +266,26 @@ ul li:hover {
     font-weight: 600;
     text-align: center;
   }
+  .blank p {
+    display: block;
+    font-size: 3em;
+    margin-top: 200px;
+  }
   .badge-header {
     font-size: 1.2em;
+  }
+  .badge-details .badge .badge-name {
+    font-size: 5em;
+    font-weight: 600;
+  }
+  .badge-details .badge .badge-description {
+    font-size: 2em;
+  }
+}
+@media (max-width: 991px) {
+  /* BODY */
+  .badges h2 {
+    border-bottom: 1px solid #eeeeee;
   }
 }
 @media (min-width: 992px) {
@@ -257,6 +325,28 @@ ul li:hover {
   /* BODY */
   h2 {
     font-size: 3em;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .badges {
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+}
+@media (max-width: 1199px) {
+  .badges-container {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .badge-details {
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
   }
 }
 @media (min-width: 1200px) {

@@ -2,6 +2,7 @@ var AppDispatcher = require('../dispatcher/BadgeExplorerDispatcher.js');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/Constants.js');
 var assign = require ('object-assign');
+var BadgesStore = require('./BadgesStore');
 
 var ActionTypes = Constants.ActionTypes;
 var CHANGE_EVENT = 'change';

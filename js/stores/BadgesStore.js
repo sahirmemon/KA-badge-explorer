@@ -2,6 +2,7 @@ var AppDispatcher = require('../dispatcher/BadgeExplorerDispatcher.js');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/Constants.js');
 var assign = require ('object-assign');
+var BadgeTypeStore = require('./BadgeTypeStore');
 
 var ActionTypes = Constants.ActionTypes;
 var CHANGE_EVENT = 'change';
@@ -49,7 +50,7 @@ var BadgesStore = assign({}, EventEmitter.prototype, {
 });
 
 BadgesStore.dispatchToken = AppDispatcher.register(function(payload) {
-  
+    
   switch(payload.actionType) {
     case ActionTypes.RECEIVE_BADGES:
       addBadges(payload.badges)

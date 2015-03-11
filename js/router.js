@@ -12,10 +12,10 @@ var NotFoundRoute = Router.NotFoundRoute;
 
 var routes = (
   <Route path="/" handler={BadgeExplorerApp}>
-    <DefaultRoute handler={Index}/>
     <Route name="category" path=":category/:name" handler={Badges}>
       <Route name="badge" path=":slug" handler={Badge}/>
     </Route>
+    <DefaultRoute handler={Index}/>
     <NotFoundRoute handler={NotFound}/>
   </Route>
 );
